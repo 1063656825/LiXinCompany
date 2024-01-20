@@ -28,7 +28,7 @@
         ]
     },
     // elementPlus类型文件 volar提示使用
-    "types": ["element-plus/global","node"]
+    "types": ["element-plus/global"]
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]

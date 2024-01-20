@@ -1,10 +1,10 @@
 /*
  * @Author: yutaiqi
  * @Date: 2024-01-11 21:45:54
- * @LastEditTime: 2024-01-13 20:25:47
+ * @LastEditTime: 2024-01-16 23:29:07
  * @LastEditors: yutaiqi
  * @Description: 文件功能描述
- * @FilePath: /syt/syt/vite.config.ts
+ * @FilePath: /sytstudy/vite.config.ts
  */
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -17,5 +17,15 @@ export default defineConfig({
     alias:{
         '@': path.resolve(__dirname, './src')
     }
-  }
+  },
+//   跨域
+  server: {
+    
+    proxy: {
+      '/api': {
+        target: 'http://syt.atguigu.cn',
+        changeOrigin: true
+      }
+    }
+  },
 })
