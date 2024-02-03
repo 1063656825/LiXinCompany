@@ -1,7 +1,7 @@
 <!--
  * @Author: yutaiqi
  * @Date: 2024-01-13 21:54:31
- * @LastEditTime: 2024-01-18 23:46:34
+ * @LastEditTime: 2024-01-20 10:25:30
  * @LastEditors: yutaiqi
  * @Description: 首页
  * @FilePath: /sytstudy/src/pages/home/index.vue
@@ -11,6 +11,7 @@ import Carousel from './components/Carousel/index.vue'
 import Search from './components/Search/index.vue'
 import SelectContent from './components/SelectContent/index.vue'
 import HospitalCard from './components/HospitalCard/index.vue'
+import Tip from './components/Tip/index.vue'
 import { Ref, onMounted,ref } from 'vue'
 
 import { getHostpitalList } from '@/api/home/index.ts'
@@ -48,7 +49,7 @@ const getHostpitalListInfo = ()=>{
             <HospitalCard v-model:current="current" v-model:limit="limit" :total="total" :data="cardList" @change="getHostpitalListInfo"/>
         </el-col>
         <el-col :span="6">
-            margin-right
+            <Tip/>
         </el-col>
     </el-row>
 </template>

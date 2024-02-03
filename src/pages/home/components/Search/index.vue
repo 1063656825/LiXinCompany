@@ -1,7 +1,7 @@
 <!--
  * @Author: yutaiqi
  * @Date: 2024-01-14 13:24:59
- * @LastEditTime: 2024-01-19 23:38:24
+ * @LastEditTime: 2024-01-23 23:00:47
  * @LastEditors: yutaiqi
  * @Description: 首页搜索区域
  * @FilePath: /sytstudy/src/pages/home/components/Search/index.vue
@@ -37,7 +37,7 @@ const querySearchAsync = (queryString: string, cb: (arg: any) => void) => {
 
 const handleSelect = (item: Record<string, any>) => {
     console.log(item,state,'state')
-    $router.push({path:'/hospital', query: {hoscode: item.hoscode}})
+    $router.push({path:'/hospital/regist', query: {hoscode: item.hoscode}})
 }
 
 onMounted(() => {

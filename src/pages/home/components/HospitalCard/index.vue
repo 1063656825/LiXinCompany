@@ -1,7 +1,7 @@
 <!--
  * @Author: yutaiqi
  * @Date: 2024-01-16 21:55:22
- * @LastEditTime: 2024-01-19 23:47:16
+ * @LastEditTime: 2024-01-23 23:01:09
  * @LastEditors: yutaiqi
  * @Description: 医院卡片
  * @FilePath: /sytstudy/src/pages/home/components/HospitalCard/index.vue
@@ -57,7 +57,7 @@ const handleCurrentChange = (val: number) => {
     emit('change')
 }
 const goDetail = (row:Hospital) => {
-    $router.push({path:'/hospital', query: {hoscode: row?.hoscode}})
+    $router.push({path:'/hospital/regist', query: {hoscode: row?.hoscode}})
 }
 
 </script>

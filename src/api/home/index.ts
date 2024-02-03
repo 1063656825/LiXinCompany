@@ -1,7 +1,7 @@
 /*
  * @Author: yutaiqi
  * @Date: 2024-01-16 21:43:58
- * @LastEditTime: 2024-01-19 23:06:59
+ * @LastEditTime: 2024-01-28 15:38:04
  * @LastEditors: yutaiqi
  * @Description: 主页api
  * @FilePath: /sytstudy/src/api/home/index.ts
@@ -10,11 +10,11 @@ import { $http } from '@/utils/request.ts'
 import { HospitalDataRes,HospitalDicData,HospitalData } from './type.ts'
 enum API {
     // 获取医院分页列表
-    HOSPITAL_LIST = '/api/hosp/hospital',
+    HOSPITAL_LIST = '/hosp/hospital',
     //获取医院的等级与地区接口
-    HOSPITALLEVElANDREGION_URL = '/api/cmn/dict/findByDictCode/',
+    HOSPITALLEVElANDREGION_URL = '/cmn/dict/findByDictCode/',
     //根据关键字医院的名字获取数据
-    HOSPITALINFO_URL = '/api/hosp/hospital/findByHosname/'
+    HOSPITALINFO_URL = '/hosp/hospital/findByHosname/'
 }
 
 // 获取医院列表

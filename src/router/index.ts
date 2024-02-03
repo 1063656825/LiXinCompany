@@ -1,12 +1,19 @@
 /*
  * @Author: yutaiqi
  * @Date: 2024-01-13 21:53:37
- * @LastEditTime: 2024-01-13 22:34:18
+ * @LastEditTime: 2024-01-23 22:55:59
  * @LastEditors: yutaiqi
  * @Description: 路由文件
- * @FilePath: /syt/syt/src/router/index.ts
+ * @FilePath: /sytstudy/src/router/index.ts
  */
 import { createRouter,RouteRecordRaw,createWebHistory } from 'vue-router'
+import {
+    Document,
+    Location,
+    Setting,
+    Operation,
+   CircleCloseFilled,
+} from '@element-plus/icons-vue'
 const routes:Array<RouteRecordRaw> = [
     {
         path:'/',
@@ -18,7 +25,54 @@ const routes:Array<RouteRecordRaw> = [
     },
     {
         path:'/hospital',
-        component: () => import('@/pages/hospital/index.vue') 
+        component: () => import('@/pages/hospital/index.vue'),
+        children: [
+            {
+                path: 'regist',
+                name: 'regist',
+                component: () => import('@/pages/hospital/regist/index.vue'),
+                meta: {
+                    title: '预约挂号',
+                    icon: Document
+                }
+            },
+            {
+                path: 'detail',
+                name: 'detail',
+                component: () => import('@/pages/hospital/detail/index.vue'),
+                meta: {
+                    title: '医院详情',
+                    icon: Setting
+                }
+            },
+            {
+                path: 'notify',
+                name: 'notify',
+                component: () => import('@/pages/hospital/notify/index.vue'),
+                meta: {
+                    title: '预约通知',
+                    icon: Location
+                }
+            },
+            {
+                path: 'clinicPause',
+                name: 'clinicPause',
+                component: () => import('@/pages/hospital/clinicPause/index.vue'),
+                meta: {
+                    title: '停诊信息',
+                    icon: Operation
+                }
+            },
+            {
+                path: 'search',
+                name: 'search',
+                component: () => import('@/pages/hospital/search/index.vue'),
+                meta: {
+                    title: '查询/取消',
+                    icon: CircleCloseFilled
+                }
+            }
+        ]
     }
 ]
 // 3. 创建路由实例并传递 `routes` 配置

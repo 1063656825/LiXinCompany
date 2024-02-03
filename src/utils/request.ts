@@ -1,7 +1,7 @@
 /*
  * @Author: yutaiqi
  * @Date: 2024-01-16 23:12:54
- * @LastEditTime: 2024-01-18 22:15:05
+ * @LastEditTime: 2024-01-28 15:23:36
  * @LastEditors: yutaiqi
  * @Description: axios请求封装
  * @FilePath: /sytstudy/src/utils/request.ts
@@ -67,7 +67,7 @@ interface Result {
 interface ResultData<T = any> extends Result {
     data: T;
 }
-const URL: string = ''
+const URL: string = '/api'
 enum RequestEnums {
     TIMEOUT = 20000,
     OVERDUE = 600, // 登录失效
@@ -105,6 +105,7 @@ class RequestHttp {
                 //         'x-access-token': token, // 请求头中携带token信息
                 //     }
                 // }
+                
                 return config;
             },
             (error: AxiosError) => {

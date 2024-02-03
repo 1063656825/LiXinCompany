@@ -1,12 +1,14 @@
 <!--
  * @Author: yutaiqi
  * @Date: 2024-01-11 21:45:54
- * @LastEditTime: 2024-01-13 22:21:29
+ * @LastEditTime: 2024-01-28 15:04:11
  * @LastEditors: yutaiqi
  * @Description: 文件功能描述
- * @FilePath: /syt/syt/src/App.vue
+ * @FilePath: /sytstudy/src/App.vue
 -->
 <script setup lang="ts">
+import useUserInfoStore from '@/store/modules/userInfo'
+const userInfoStore = useUserInfoStore()
 </script>
 
 <template>
@@ -22,6 +24,9 @@
 
         <!-- 底部区域 -->
         <HospitalBottom/>
+
+        <!-- 登录弹窗  -->
+        <Login :visible="userInfoStore.loginVisible" />
 
     </div>
 </template>
